@@ -23,3 +23,24 @@ type PaginateDataType = {
   hasOffset: boolean;
   offset: number | null;
 };
+
+interface ContactsInterface {
+  address_line_1: string;
+  address_line_2: string;
+  city: string;
+  code: string;
+  company_name: string;
+  country: string;
+  created: string;
+  currency: string;
+  email: string;
+  first_name: string;
+  id: number;
+  last_name: string;
+  notes: string;
+  payment_terms: string;
+  phone: string;
+  pincode: string;
+  state: string;
+  updated: string;
+}
