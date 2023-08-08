@@ -45,7 +45,7 @@ const ProductList: FC = () => {
       let query = {
         contact: selectedValue,
         limit: initialCount ? initialCount : PAGINATION_LIMIT,
-        offset: initialOffset ? initialOffset : 10,
+        offset: initialOffset ? initialOffset : 0,
       };
       loadProducts(query);
       const url = objectToUrl({ ...query, ...fixedListParams });
@@ -103,6 +103,11 @@ const ProductList: FC = () => {
     navigate(`?${url}`);
   };
 
+  const handleReset = () => {
+    setSelectedValue("");
+    navigate("");
+  };
+
   return (
     <>
       <TypeAhead
@@ -120,7 +125,7 @@ const ProductList: FC = () => {
         }}
       >
         <div style={{ marginBottom: "1rem" }}>
-          <Button>Reset</Button>
+          <Button onClick={handleReset}>Reset</Button>
           <div
             style={{
               display: "flex",
